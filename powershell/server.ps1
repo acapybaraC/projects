@@ -9,7 +9,7 @@ function timeChecker_normal
         "True" #Replace with runFilename
     }
     else{
-        Start-Sleep -Seconds $timeDifference
+        Start-Sleep -Seconds 60
     }
 }
 
