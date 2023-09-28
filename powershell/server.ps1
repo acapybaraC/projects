@@ -1,11 +1,22 @@
-$shortRelease = [PSCustomObject]@{
-    Hour = 12
-    Minute = 55
-}
-
-function timeChecker_normal
+function timeChecker_normal #Mon-Thu Dismissal
 {
-    if ((($LocalTime.Hour) -eq 15) -and (($LocalTime.Minute) -eq 15)) {
+    if ((($LocalTime.Hour) -eq 13) -and (($LocalTime.Minute) -eq 55)) {
+        "True" #Replace with runFilename
+        #Preschool 
+    }
+    elseif ((($LocalTime.Hour) -eq 14) -and (($LocalTime.Minute) -eq 25)) {
+        "True" #Replace with runFilename
+        #Year 1-2 
+    }
+    elseif ((($LocalTime.Hour) -eq 14) -and (($LocalTime.Minute) -eq 55)) {
+        "True" #Replace with runFilename
+        #Year 3-6 
+    }
+    elseif ((($LocalTime.Hour) -eq 15) -and (($LocalTime.Minute) -eq 15)) {
+        "True" #Replace with runFilename
+        #Secondary/Sixth Form
+    }
+    elseif ((($LocalTime.Hour) -eq 16) -and (($LocalTime.Minute) -eq 05)) {
         "True" #Replace with runFilename
     }
     else{
@@ -13,10 +24,15 @@ function timeChecker_normal
     }
 }
 
-function timeChecker_short
+function timeChecker_short #Friday Dismissal
 {
-    if ((($LocalTime.Hour) -eq ($shortRelease.hour)) -and (($LocalTime.Minute) -eq ($shortRelease.minute))) {
+    if ((($LocalTime.Hour) -eq 11) -and (($LocalTime.Minute) -eq 55)) {
         "True" #Replace with runFilename
+        #Preschool
+    }
+    elseif ((($LocalTime.Hour) -eq 11) -and (($LocalTime.Minute) -eq 55)) {
+        "True" #Replace with runFilename
+        #Preschool
     }
     else{
         Start-Sleep -Seconds 60
