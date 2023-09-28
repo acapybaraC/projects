@@ -18,6 +18,7 @@ function timeChecker_normal #Mon-Thu Dismissal
     }
     elseif ((($LocalTime.Hour) -eq 16) -and (($LocalTime.Minute) -eq 05)) {
         "True" #Replace with runFilename
+        #CCA Combined
     }
     else{
         Start-Sleep -Seconds 60
@@ -32,7 +33,15 @@ function timeChecker_short #Friday Dismissal
     }
     elseif ((($LocalTime.Hour) -eq 11) -and (($LocalTime.Minute) -eq 55)) {
         "True" #Replace with runFilename
-        #Preschool
+        #Year 1-2
+    }
+    elseif ((($LocalTime.Hour) -eq 12) -and (($LocalTime.Minute) -eq 25)) {
+        "True" #Replace with runFilename
+        #Year 3-6
+    }
+    elseif ((($LocalTime.Hour) -eq 12) -and (($LocalTime.Minute) -eq 55)) {
+        "True" #Replace with runFilename
+        #Secondary/Sixth Form
     }
     else{
         Start-Sleep -Seconds 60
