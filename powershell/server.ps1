@@ -1,7 +1,3 @@
-$normalRelease = [PSCustomObject]@{
-    Hour = 3
-    Minute = 15
-}
 $shortRelease = [PSCustomObject]@{
     Hour = 12
     Minute = 55
@@ -9,13 +5,10 @@ $shortRelease = [PSCustomObject]@{
 
 function timeChecker_normal
 {
-    if ((($LocalTime.Hour) -eq ($normalRelease.hour)) -and (($LocalTime.Minute) -eq ($normalRelease.minute))) {
+    if ((($LocalTime.Hour) -eq 15) -and (($LocalTime.Minute) -eq 15)) {
         "True" #Replace with runFilename
     }
     else{
-        $hour = $normalRelease.hour - $LocalTime.Hour
-        $minute = $normalRelease.minute - $LocalTime.Minute
-        $timeDifference = 60 * $minute * (60 * $hour)
         Start-Sleep -Seconds $timeDifference
     }
 }
@@ -26,20 +19,8 @@ function timeChecker_short
         "True" #Replace with runFilename
     }
     else{
-        $hour = $shortRelease.hour - $LocalTime.Hour
-        $minute = $shortRelease.minute - $LocalTime.Minute
-        $timeDifference = 60 * $minute * (60 * $hour)
-        Start-Sleep -Seconds $timeDifference
+        Start-Sleep -Seconds 60
     }
-}
-
-$normalRelease = [PSCustomObject]@{
-    Hour = 3
-    Minute = 15
-}
-$shortRelease = [PSCustomObject]@{
-    Hour = 12
-    Minute = 55
 }
 
 function day{
