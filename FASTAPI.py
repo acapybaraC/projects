@@ -30,7 +30,7 @@ class DATA(BaseModel):
     studentname: str
     yeargroup: int
     speeched_list: int
-    lane: int
+    lane: str
     success: str
     unregistered_plate: str
     unregistered_lane: str
