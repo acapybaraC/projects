@@ -4,6 +4,7 @@ from pydantic import BaseModel
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from time import sleep
+from typing import list
 import threading
 
 app = FastAPI(__name__)
@@ -29,9 +30,9 @@ new_data = {
 class DATA(BaseModel):
     studentname: str
     yeargroup: int
-    speeched_list: int
+    speeched_list: List[int]
     lane: str
-    success: str
+    success: bool
     unregistered_plate: str
     unregistered_lane: str
     audio_file: str
